@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css"/>
+	<title>职位管理</title>
+	<script src="../lib/requirejs/require.js" data-main="/js/position" ></script>
+</head>
+<body>
+	<div class="container">
+		<!--头部-->
+		<header></header>
+	    
+		<!-- 添加错题集按钮 -->
+		<div class="rows" style="display: flex;justify-content: space-between;align-items: center;margin-bottom: 13px;margin-top: 23px;">
+			<span>职位管理</span>
+			<button class="btn btn-primary" data-toggle="modal" data-target="#addModal" ">添加</button>
+		</div>
+
+	    
+	    <!--模态框 -->
+		<div class="modal fade" id="addModal" tabindex="-1">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">职位信息</h4>
+		      </div>
+		      
+		      <div class="modal-body">
+		      <!--表单-->
+		        <form>
+				  <div class="form-group">
+				    <label for="companyLogo">公司logo</label>
+				    <input type="email" class="form-control" id="companyLogo" placeholder="未选择任何文件">
+				  </div>
+				  <div class="form-group">
+				    <label for="positionName">职位名称</label>
+				    <input type="password" class="form-control" id="positionName" placeholder="输入职位名">
+				  </div>
+				  <div class="form-group">
+				    <label for="companyName">公司名称</label>
+				    <input type="password" class="form-control" id="companyName" placeholder="输入公司名称">
+				  </div>
+				  <div class="form-group">
+				    <label for="workExper">工作经验</label>
+				    <input type="email" class="form-control" id="workExper" placeholder="输入工作经验">
+				  </div>
+				  <div class="form-group">
+				    <label for="positionType">职位类型</label>
+				    <input type="password" class="form-control" id="positionType" placeholder="输入职位名称">
+				  </div>
+				  <div class="form-group">
+				    <label for="workPosition">工作地点</label>
+				    <input type="password" class="form-control" id="workPosition" placeholder="输入职位名称">
+				  </div>
+				  <div class="form-group">
+				    <label for="postSalary">岗位薪资</label>
+				    <input type="email" class="form-control" id="postSalary" placeholder="输入岗前薪资">
+				  </div>
+				</form>
+		      </div>
+		      
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		        <button type="button" class="btn btn-primary">提交</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	    
+	    <!--表格-->
+	    <table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>公司logo</th>
+					<th>职位名称</th>
+					<th>工作经验</th>
+					<th>职位类型</th>
+					<th>工作地点</th>
+					<th>职位薪资</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<thody>
+				<tr>
+					<td>1</td>
+					<td></td>
+					<td>dd</td>
+					<td>ddd</td>
+					<td>dd</td>
+					<td>dd</td>
+					<td>dd</td>
+					<td><a href="#">修改</a> <a href="#">删除</a></td>
+				</tr>
+			</thody>
+		</table>
+		
+		<!--翻页-->
+		<nav aria-label="..." style="float: right;">
+		  <ul class="pagination">
+		    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+		    <li class="active"><a href="#">1 </a></li>
+		    <li ><a href="#">2 </a></li>
+		    <li ><a href="#">3 </a></li>
+		    <li ><a href="#">4 </a></li>
+		    <!--<li ><a href="#">5 </a></li>-->
+		    <li ><a href="#" aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>
+		  </ul>
+		</nav>
+		
+	</div>
+	
+	<script src="/lib/jquery/jquery-1.12.4.min.js"></script>
+	<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
