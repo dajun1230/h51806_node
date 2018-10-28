@@ -30,6 +30,8 @@ define(["jquery"],function($){
 		addListener(){
 			$(".btn-login").on("click",this.loginHandler);
 			$(".logout").on("click",this.loginOut);
+			$(".code").on("click",this.genCode);
+			$(".inputCode").on("blur",this.codeHandler);
 		},
 		loginHandler(){
 			var data=$(".form-login").serialize();
@@ -67,6 +69,19 @@ define(["jquery"],function($){
 			$.getJSON("/api/captcha",(data)=>{
 				$(".code").html(data.res_body.data);
 			});
+		},
+		// 校验验证码
+		codeHandler(event) {
+			// 输入的值
+			const code = $(event.target).val();
+			// ajax
+			$.getJSON("/api/captcha/verify", {code}, (data)=>{
+				if (data.res_body.valid) {
+					alert("正确");
+				} else {
+					alert("错误");
+				}
+			})
 		}
 	}
 	
