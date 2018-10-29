@@ -36,7 +36,7 @@ define(["jquery"],function($){
 		loginHandler(){
 			var data=$(".form-login").serialize();
 //			console.log(data);
-			const url="http://rap2api.taobao.org/app/mock/115326/api/users/login";
+			const url="/api/users/login";
 			$.post(url,data,(data)=>{
 				if (data.res_body.status===1){
 					sessionStorage.username=data.res_body.data.username;
@@ -58,7 +58,7 @@ define(["jquery"],function($){
 		//用户注销
 		loginOut(){
 			sessionStorage.removeItem("username");
-			$.getJSON("http://rap2api.taobao.org/app/mock/115326/api/users/logout",(data)=>{
+			$.getJSON("/api/users/logout",(data)=>{
 				if(data.res_body.status===1){
 					location.reload();
 				}
